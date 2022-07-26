@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/socket.git/static/css/main.964b1854.css",
-    "main.js": "/socket.git/static/js/main.911ed9a5.js",
-    "index.html": "/socket.git/index.html",
-    "main.964b1854.css.map": "/socket.git/static/css/main.964b1854.css.map",
-    "main.911ed9a5.js.map": "/socket.git/static/js/main.911ed9a5.js.map"
+    "main.css": "/static/css/main.964b1854.css",
+    "main.js": "/static/js/main.911ed9a5.js",
+    "index.html": "/index.html",
+    "main.964b1854.css.map": "/static/css/main.964b1854.css.map",
+    "main.911ed9a5.js.map": "/static/js/main.911ed9a5.js.map"
   },
   "entrypoints": [
     "static/css/main.964b1854.css",
