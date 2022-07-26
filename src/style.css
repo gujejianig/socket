@@ -1,0 +1,14 @@
+body {
+    background-color: #100e14;
+}
+* {
+    color: white !important;
+}
+.cell1 , .cell2, .cell3, .cell4{
+    width: 40px;
+    height: 40px;
+}
+.cell1,.cell2, .cell3, .cell4{
+    border: black;
+    background-color: #b29393;
+    margin: 1px;}
