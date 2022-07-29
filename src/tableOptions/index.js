@@ -28,7 +28,6 @@ export const getButtonSize = (level) => {
 	}
 
 }
-
 export const getRowLength = (level) => {
 	switch (level) {
 		case 1:
