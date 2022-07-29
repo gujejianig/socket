@@ -27,26 +27,28 @@ function createWebSocket() {
 		socket = ws;
 		ws.onmessage = (e) => {
 			let [start, end] = e.data.split(":");
-			if(start === "map") {
-				let data = e.data.substring(5);
-				data = data.replace(/\s/g, '');
-				return em(changeMap(data));
-			}  if (start === "open" ) {
-				if(end === " You lose") {
-					return em(lost())
-				}
-			} if (start === "open" ) {
-				if( end === " You win. The password for this level is")
-				return em(win())
+			switch (start) {
+				case "map" :
+					let data = e.data.substring(5);
+					data = data.replace(/\s/g, '');
+					return em(changeMap(data));
+				case "open" :
+					if(end === " You lose") {
+						em(lost())
+					}
+					if( end === " You win. The password for this level is") {
+						em(win())
+					}
+					break;
+				default:
+					return null
 			}
-			return null
 		}
 		return () => {
-			console.log("socket has unsubscribed")
+			alert("socket has unsubscribed")
 		}
 	})
 }
-
 export default function* rootSaga() {
 	yield all([takeLatest(actionTypes.START_GAME, startGameSaga), takeLatest(actionTypes.CHANGE_LEVEL, chooseLevelSaga),
 		takeLatest(actionTypes.OPEN_CELL, openCellSaga)])

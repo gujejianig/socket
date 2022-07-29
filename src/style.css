@@ -7,8 +7,29 @@ body {
 .cell1 , .cell2, .cell3, .cell4{
     width: 40px;
     height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
 }
+
+.cell2 {
+    width: 30px;
+    height: 30px;
+}
+
+.cell3 {
+    width: 15px;
+    height: 15px;
+}
+
+
+
+
+
 .cell1,.cell2, .cell3, .cell4{
     border: black;
     background-color: #b29393;
     margin: 1px;}
+
+

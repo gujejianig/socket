@@ -58,5 +58,3 @@ export const getColumnLength = (level) => {
 			return 0
 	}
 }
-
-

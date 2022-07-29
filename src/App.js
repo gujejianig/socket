@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux";
 import { getRowLength, getColumnLength } from "./tableOptions";
 import { start, changeLevel, } from "./Redux/actions";
 import Row from "./components/Row";
-import {useEffect, useState} from "react";
-import { Button, Typography, MenuItem } from "@mui/material";
+import {useEffect} from "react";
+import { Button, Typography, Grid } from "@mui/material";
 
 const App = () => {
 	const state = useSelector((state) => state);
@@ -12,7 +12,6 @@ const App = () => {
 	useEffect(() => {
 		dispatch(start());
 	}, [dispatch])
-
 
 	const levelChange = (newLevel) => {
 		let newColumn = getColumnLength(newLevel);
@@ -29,22 +28,21 @@ const App = () => {
 		<>
 			<Typography  align="center" marginTop="10px" >choose level</Typography>
 			<br/>
-			<div style={{textAlign: "center", }}>
+			<Grid textAlign="center" >
 				{[...Array(4 )].map((x, i) =>
 					<Button sx={{m: 1}}  color={"success"} variant="outlined" onClick={() => levelChange(i + 1)} key={i}> {i + 1} </Button>
 				)}
-			</div>
+			</Grid>
 			<br/>
-			<div style={{justifyContent:"center", width: state.level === 4|| state.level===3 ? "fit-content":""}}>
+			<Grid  style={{width: state.level === 4|| state.level===3 ? "fit-content":""}}>
 				{rows}
-			</div>
+			</Grid>
 			<br/>
 			{state.lost > 0 &&
 				<Typography align="center" color="red">
 					You lost, please choose Level again..
 				</Typography>
 			}
-
 			{state.won > 0 &&
 				<Typography align="center" color="green">
 					You won, to play again choose level.
